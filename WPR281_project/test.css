@@ -1,0 +1,406 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /*change font*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(315deg, rgb(42, 85, 203) 3%, #3067f0 38%, rgb(5, 131, 249) 68%, rgb(151, 213, 221) 98%);
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+header {
+    background-color: #4779b0;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.search-bar-container {
+    margin-top: 15px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+button {
+    padding: 12px 20px;
+    border: 1px solid #145984;
+    background-color: #3672b6;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #003b77;
+}
+
+main {
+    margin-left: 200px; 
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #1e3a56; 
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: width 0.3s ease;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+#toggle-sidebar {
+    display: block;
+    background: #2c577f; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px; 
+    width: 100%;
+    text-align: center;
+    font-size: 1em; 
+    transition: background 0.3s ease-in-out;
+}
+
+#toggle-sidebar:hover {
+    background: #1e3a56; 
+}
+
+#sidebar-nav {
+    display: block;
+}
+
+#sidebar-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar-nav ul li {
+    margin-bottom: 20px; 
+}
+
+#sidebar-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+#sidebar-nav ul li a:hover {
+    background-color: #2c577f; /
+}
+
+#sidebar.collapsed #sidebar-nav {
+    display: none;
+}
+
+.container {
+    width: calc(100% - 220px); 
+    max-width: 1200px;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out 0.5s;
+    position: relative; 
+    overflow: hidden; 
+}
+
+h2 {
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.course {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+
+.course img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.course h3 {
+    margin-top: 0;
+    font-size: 1.75em;
+}
+
+.course button {
+    margin-top: 15px;
+}
+
+.course button:hover {
+    background-color: #003b77;
+}
+
+#course-details {
+    display: none;
+    margin-top: 0;
+    margin-bottom: 15px;
+    
+}
+
+/* Add spacing between the module items */
+#course-details ul li {
+    margin-bottom: 20px;
+}
+
+#course-details ul li button, #course-details button {
+    display: block;
+    margin: 15px 0; 
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#completed-list li {
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+#available-courses {
+    display: none;
+}
+
+#available-courses .course {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #0056b3;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Enrollment Form Styles */
+#enrollment-form {
+    display: none;
+}
+
+#enrollment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#enrollment-form label {
+    margin: 10px 0 5px;
+    font-size: 1.1em;
+}
+
+#enrollment-form input, #enrollment-form select, #enrollment-form button {
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+#enrollment-form button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#enrollment-form button:hover {
+    background-color: #003b77;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.home {
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; 
+}
+
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+img {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30rem;
+    width: 100%;
+    background: url(https://raw.githubusercontent.com/Sacsam005/HTML_CSS/main/html_css-portfolio/images/wave.png) repeat-x;
+    background-size: 200rem 30rem;
+    animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -250rem;
+    }
+}
+
+.wave.wave-2 {
+    opacity: 0.5;
+    animation-delay: 0.2s;
+    animation-direction: reverse;
+}
+
+.wave.wave-3 {
+    opacity: 0.7;
+    animation-duration: 5s;
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+.course:hover {
+    box-shadow: 0 4px 8px rgba(54, 114, 182, 0.6); 
+    border: 1px solid #3672b6; 
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out; 
+}
+
+.wave {
+    background: rgb(8, 84, 166);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+  }
+  
+  .wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+  }
+
+  @keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+  
+    25% {
+        transform: translateX(-25%);
+    }
+  
+    50% {
+        transform: translateX(-50%);
+    }
+  
+    75% {
+        transform: translateX(-25%);
+    }
+  
+    100% {
+        transform: translateX(1);
+    }
+  }
+
